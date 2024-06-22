@@ -1,0 +1,37 @@
+.bg {
+    background-attachment: fixed;
+    background-image: url('../images/img3.jpg');
+    background-position: 50%;
+    background-size: cover;
+    object-fit: cover;
+    height: 100vh;
+    opacity: .9;
+}
+.border{
+    width: 500px;
+    height: 350px;
+    margin: auto;
+    border: 3px solid #fff;
+    border-radius: 20px;
+    align-items: center;
+    margin-top: 0px;
+   
+    backdrop-filter: blur(1px);
+}
+
+.heading{
+    color:black;
+    font-family: Tapestry, cursive;
+    margin-top: 50px;
+
+    font-weight: 300;
+    line-height: 1.2;
+    margin-bottom: .5rem;
+    margin-top: 0; 
+}
+@media (max-width:768px) {
+    .border {
+        width: 500px;
+        height: 350px;
+    }
+}
