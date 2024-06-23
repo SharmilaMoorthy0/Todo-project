@@ -93,7 +93,7 @@ function Todo() {
   }
 
   //remove todo//
-  const removetodo = (id) => {
+  const removetodo = (data) => {
     swal({
       title: "Are you sure?",
       text: `Are you sure that you want to delete the Todo ?`,
@@ -104,7 +104,7 @@ function Todo() {
 
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`https://todo-backend-7-bd9d.onrender.com/remove/todo/${id}`, {
+        axios.delete(`https://todo-backend-7-bd9d.onrender.com/remove/todo/${data.Task}`, {
           headers: {
             Authorization: localStorage.getItem("myapptoken")
           }
@@ -208,7 +208,7 @@ function Todo() {
 
                       <button className=' btn btn-warning rounded mx-1' onClick={() => Todoedit(list)}>
                         <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                      <button className='btn btn-danger rounded' onClick={() => removetodo(list._id)}><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                      <button className='btn btn-danger rounded' onClick={() => removetodo(list)}><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 
                     </div>
                   </div>
