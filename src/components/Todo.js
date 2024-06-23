@@ -93,7 +93,7 @@ function Todo() {
   }
 
   //remove todo//
-  const removetodo = (data) => {
+  const removetodo = (list) => {
     swal({
       title: "Are you sure?",
       text: `Are you sure that you want to delete the Todo ?`,
@@ -104,7 +104,7 @@ function Todo() {
 
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`https://todo-backend-7-bd9d.onrender.com/remove/todo/${data.Task}`, {
+        axios.delete(`https://todo-backend-7-bd9d.onrender.com/remove/todo/${list.Task}`, {
           headers: {
             Authorization: localStorage.getItem("myapptoken")
           }
