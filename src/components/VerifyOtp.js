@@ -15,7 +15,7 @@ function VerifyOtp() {
         if (otp.length < 4) {
             return toast.error("invalid OTP")
         }
-        axios.post("http://localhost:8000/verify/otp", { Email: location?.state?.Email, otp: otp }).then((res) => {
+        axios.post("https://todo-backend-7-bd9d.onrender.com/verify/otp", { Email: location?.state?.Email, otp: otp }).then((res) => {
             if (res.data.status === 1) {
                 toast.success(res.data.message)
                 navigate('/reset/password', { state: { Email: location?.state?.Email } })

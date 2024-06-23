@@ -25,7 +25,7 @@ function ResetPassword() {
             return toast.error("password doesn't match")
         }
 
-        axios.post("http://localhost:8000/reset/password", reset).then((res) => {
+        axios.post("https://todo-backend-7-bd9d.onrender.com/reset/password", reset).then((res) => {
             if (res.data.status === 1) {
                 toast.success(res.data.message)
                 navigate('/')

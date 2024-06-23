@@ -26,7 +26,7 @@ function Todo() {
     if (newtodo.Task === "") {
       toast.error("task filled cannot be empty!")
     }
-    axios.post("http://localhost:8000/new/todo", newtodo, {
+    axios.post("https://todo-backend-7-bd9d.onrender.com/new/todo", newtodo, {
       headers: {
         Authorization: localStorage.getItem("myapptoken")
       }
@@ -48,7 +48,7 @@ function Todo() {
   }
   //get all todo//
   const getTodolist = () => {
-    axios.get("http://localhost:8000/all/todo", {
+    axios.get("https://todo-backend-7-bd9d.onrender.com/all/todo", {
       headers: {
         Authorization: localStorage.getItem("myapptoken")
       }
@@ -74,7 +74,7 @@ function Todo() {
       return toast.error("task filled cannot be empty!")
 
     }
-    axios.put(`http://localhost:8000/update/todo/${editTodo._id}`, editTodo, {
+    axios.put(`https://todo-backend-7-bd9d.onrender.com/update/todo/${editTodo._id}`, editTodo, {
       headers: {
         Authorization: localStorage.getItem("myapptoken")
       }
@@ -96,7 +96,7 @@ function Todo() {
   const removetodo = (id) => {
     swal({
       title: "Are you sure?",
-      text: `Are you sure that you want to delete the Todo ${id.Task}?`,
+      text: `Are you sure that you want to delete the Todo ?`,
       icon: "warning",
       dangerMode: true,
       buttons: true
@@ -104,7 +104,7 @@ function Todo() {
 
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`http://localhost:8000/remove/todo/${id}`, {
+        axios.delete(`https://todo-backend-7-bd9d.onrender.com/remove/todo/${id}`, {
           headers: {
             Authorization: localStorage.getItem("myapptoken")
           }
@@ -136,7 +136,7 @@ function Todo() {
       id: id,
       isCompleted: value
     }
-    axios.post("http://localhost:8000/complete/todo", data, {
+    axios.post("https://todo-backend-7-bd9d.onrender.com/complete/todo", data, {
       headers: {
         Authorization: localStorage.getItem("myapptoken")
       }

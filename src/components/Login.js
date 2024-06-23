@@ -20,7 +20,7 @@ function Login() {
         if (login.password === "") {
             return toast.error("password requried")
         }
-        axios.post("http://localhost:8000/login/user", login).then((res) => {
+        axios.post("https://todo-backend-7-bd9d.onrender.com/login/user", login).then((res) => {
             if (res.data.status === 1) {
                 toast.success(res.data.message)
                 console.log(res.data.token)

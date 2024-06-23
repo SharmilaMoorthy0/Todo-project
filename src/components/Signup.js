@@ -46,7 +46,7 @@ function Signup() {
             return toast.error("must contain 10 digits")
         }
 
-        axios.post("http://localhost:8000/user/signup", user).then((res) => {
+        axios.post("https://todo-backend-7-bd9d.onrender.com/user/signup", user).then((res) => {
             if (res.data.status === 1) {
                 toast.success(res.data.message)
                 setuser({
