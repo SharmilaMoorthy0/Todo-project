@@ -96,7 +96,7 @@ function Todo() {
   const removetodo = (list) => {
     swal({
       title: "Are you sure?",
-      text: `Are you sure that you want to delete the Todo ?`,
+      text: `Are you sure that you want to delete the ${list.Task} ?`,
       icon: "warning",
       dangerMode: true,
       buttons: true
@@ -104,7 +104,7 @@ function Todo() {
 
     }).then((willDelete) => {
       if (willDelete) {
-        axios.delete(`https://todo-backend-7-bd9d.onrender.com/remove/todo/${list.Task}`, {
+        axios.delete(`https://todo-backend-7-bd9d.onrender.com/remove/todo/${list.id}`, {
           headers: {
             Authorization: localStorage.getItem("myapptoken")
           }
