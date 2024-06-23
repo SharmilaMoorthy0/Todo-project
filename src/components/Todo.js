@@ -96,7 +96,7 @@ function Todo() {
   const removetodo = (list) => {
     swal({
       title: "Are you sure?",
-      text: `Are you sure that you want to delete the ${list.Task} ?`,
+      text: `Are you sure that you want to delete this Todo ${list.Task} ?`,
       icon: "warning",
       dangerMode: true,
       buttons: true
