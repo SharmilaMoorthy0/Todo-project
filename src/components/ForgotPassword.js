@@ -14,7 +14,7 @@ function ForgotPassword() {
         if (email === "") {
             return toast.error("Email requried")
         }
-        axios.post("https://todo-backend-7-bd9d.onrender.com//forgot/password", { Email: email }).then((res) => {
+        axios.post("https://todo-backend-7-bd9d.onrender.com/forgot/password", { Email: email }).then((res) => {
             if (res.data.status === 1) {
                 toast.success(res.data.message)
                 navigate('/verify/otp', { state: { Email: email } })
